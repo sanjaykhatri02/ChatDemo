@@ -1292,6 +1292,9 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                         DispatchQueue.main.async {
                                             //temp lib
                                             //aCell.ivImage.load.request(with: self.conversationArrayList[indexPath.row].files![0].url ?? "")
+                                            let url = URL(string: self.conversationArrayList[indexPath.row].files![0].url ?? "")
+                                            aCell.ivImage.kf.setImage(with: url)
+                                           
                                         }
                                     }
                                     aCell.lblTime.text = self.utcToLocal(dateStr: self.conversationArrayList[indexPath.row].timestamp ?? "")
@@ -1586,6 +1589,8 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                 DispatchQueue.main.async {
                                     //temp lib
                                     //aCell.ivImageView.load.request(with: self.conversationArrayList[indexPath.row].files![0].url ?? "")
+                                    let url = URL(string: self.conversationArrayList[indexPath.row].files![0].url ?? "")
+                                    aCell.ivImageView.kf.setImage(with: url)
                                 }
                                 
                                 aCell.lbl_time.text = self.utcToLocal(dateStr: self.conversationArrayList[indexPath.row].timestamp ?? "")
@@ -1595,6 +1600,8 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                     aCell.ivDownload.isHidden = false
                                     //temp lib
                                     //aCell.ivDownload.image = UIImage.gif(name: "cloudnew")
+                                    aCell.ivDownload.loadGIF(named: "cloudnew")
+                                    
                                 }else{
                                     aCell.downloaduiView.isHidden = true
                                     aCell.ivDownload.isHidden = true
@@ -1809,6 +1816,7 @@ extension ChatViewController {
             self.lblReconnecting.text = "Reconnecting.."
             //temp lib
             //self.ivReconnectingImage.image = UIImage.gif(name: "connecting")
+            self.ivReconnectingImage.loadGIF(named: "connecting")
         }
     }
     
@@ -1873,6 +1881,7 @@ extension ChatViewController {
             uitableVc.ivDownload.isHidden = false
             //temp lib
             //uitableVc.ivDownload.image = UIImage.gif(name: "cloudnew")
+            uitableVc.ivDownload.loadGIF(named: "cloudnew")
         }else{
             uitableVc.downloaduiView.isHidden = true
             uitableVc.ivDownload.isHidden = true
@@ -1885,6 +1894,7 @@ extension ChatViewController {
             uitableVc.ivDownload.isHidden = false
             //temp lib
             //uitableVc.ivDownload.image = UIImage.gif(name: "cloudnew")
+            uitableVc.ivDownload.loadGIF(named: "cloudnew")
         }else{
             uitableVc.downloaduiView.isHidden = true
             uitableVc.ivDownload.isHidden = true
@@ -1897,6 +1907,7 @@ extension ChatViewController {
             uitableVc.ivDownload.isHidden = false
             //temp lib
             //uitableVc.ivDownload.image = UIImage.gif(name: "cloudnew")
+            uitableVc.ivDownload.loadGIF(named: "cloudnew")
         }else{
             uitableVc.downloaduiView.isHidden = true
             uitableVc.ivDownload.isHidden = true
@@ -1909,6 +1920,7 @@ extension ChatViewController {
             uitableVc.ivDownload.isHidden = false
             //temp lib
 //            uitableVc.ivDownload.image = UIImage.gif(name: "cloudnew")
+            uitableVc.ivDownload.loadGIF(named: "cloudnew")
         }else{
             uitableVc.downloaduiView.isHidden = true
             uitableVc.ivDownload.isHidden = true
