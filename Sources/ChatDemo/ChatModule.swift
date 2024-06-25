@@ -14,7 +14,7 @@ import UIKit
 public func createChatViewController() -> ChatViewController? {
 //    print("Test...")
     let bundle = Bundle.module
-    let storyboard = UIStoryboard(name: "Chat", bundle: bundle)
+    let storyboard = UIStoryboard(name: "MainChat", bundle: bundle)
     let viewController = storyboard.instantiateViewController(withIdentifier: "ChatViewController") as? ChatViewController
     return viewController
     
