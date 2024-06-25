@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-import SwiftSignalRClient
+import SignalRClient
 class Singleton  {
     
     static let sharedInstance = Singleton()

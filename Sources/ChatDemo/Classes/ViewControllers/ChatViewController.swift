@@ -6,21 +6,20 @@
 //
 
 import UIKit
-import  SwiftSignalRClient
-import Toaster
-import ISEmojiView
+import SignalRClient
+//import Toaster
 import Photos
 import MobileCoreServices
 import Alamofire
-import ImageLoader
+//import ImageLoader
 import SwiftEventBus
 import QuickLook
-import SwiftGifOrigin
+//import SwiftGifOrigin
 import Kingfisher
 import BSImagePicker
 
 var conversationByZeroId : [ConversationsByUUID]! 
-class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+public class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var timer = Timer()
     var timerDatabase : Timer?
@@ -149,7 +148,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     //MARK: TableView Pagination
     var isLoading = false
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         //generate conversationUUid when user open conversation
         if !CustomUserDefaultChat.sheard.getConversationUuID().isEmpty{
@@ -204,7 +203,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     
-    override func viewWillAppear(_ animated: Bool) {
+    public override func viewWillAppear(_ animated: Bool) {
         CustomUserDefaultChat.sheard.saveConversationCountFromServer(count: "0")
         SwiftEventBus.post("refreshChatBadgeCount")
     }
@@ -399,13 +398,13 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    public override func viewDidAppear(_ animated: Bool) {
         
 //        self.showFeedBackDialogue()
     
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
+    public override func viewDidDisappear(_ animated: Bool) {
         self.timerDatabase?.invalidate()
         self.timerDatabase = nil
     }
@@ -421,11 +420,11 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @IBOutlet weak var btnEmoji: UIButton!
-    override func viewWillDisappear(_ animated: Bool) {
+    public override func viewWillDisappear(_ animated: Bool) {
        
     }
     
-    override func didReceiveMemoryWarning() {
+    public override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
@@ -573,12 +572,12 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
  
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        print("")
         return self.conversationArrayList.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
             if !self.conversationArrayList.isEmpty{
                 if self.conversationArrayList[indexPath.row].type == "system" {
@@ -1286,7 +1285,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
                                     }else{
 //                                        aCell.ivImage.setImage(with: self.conversationArrayList[indexPath.row].files![0].url ?? "", placeHolder: UIImage(named: "placeholder"))
                                         DispatchQueue.main.async {
-                                            aCell.ivImage.load.request(with: self.conversationArrayList[indexPath.row].files![0].url ?? "")
+                                            //temp lib
+                                            //aCell.ivImage.load.request(with: self.conversationArrayList[indexPath.row].files![0].url ?? "")
                                         }
                                     }
                                     aCell.lblTime.text = self.utcToLocal(dateStr: self.conversationArrayList[indexPath.row].timestamp ?? "")
@@ -1579,7 +1579,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
 //                                aCell.ivImageView.setImage(with: self.conversationArrayList[indexPath.row].files![0].url ?? "", placeHolder: UIImage(named: "placeholder"))
                                 // Load image asynchronously
                                 DispatchQueue.main.async {
-                                    aCell.ivImageView.load.request(with: self.conversationArrayList[indexPath.row].files![0].url ?? "")
+                                    //temp lib
+                                    //aCell.ivImageView.load.request(with: self.conversationArrayList[indexPath.row].files![0].url ?? "")
                                 }
                                 
                                 aCell.lbl_time.text = self.utcToLocal(dateStr: self.conversationArrayList[indexPath.row].timestamp ?? "")
@@ -1587,7 +1588,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
                                 if self.conversationArrayList[indexPath.row].isDownloading == true{
                                     aCell.downloaduiView.isHidden = false
                                     aCell.ivDownload.isHidden = false
-                                    aCell.ivDownload.image = UIImage.gif(name: "cloudnew")
+                                    //temp lib
+                                    //aCell.ivDownload.image = UIImage.gif(name: "cloudnew")
                                 }else{
                                     aCell.downloaduiView.isHidden = true
                                     aCell.ivDownload.isHidden = true
@@ -1669,12 +1671,12 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         return UITableViewCell() //return aCell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
     
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        if(Reachability.isConnectedToNetwork()){
         if !self.conversationArrayList.isEmpty{
             if self.conversationArrayList[indexPath.row].isFailed == false{
@@ -1702,7 +1704,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
 //        }
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
        
         if indexPath.row == self.conversationArrayList.count - 1 && !isLoading{
             if (self.pageNumber<=self.totalpages){
@@ -1800,7 +1802,8 @@ extension ChatViewController {
         }else{
             self.uiViewReconnection.isHidden = false //false
             self.lblReconnecting.text = "Reconnecting.."
-            self.ivReconnectingImage.image = UIImage.gif(name: "connecting")
+            //temp lib
+            //self.ivReconnectingImage.image = UIImage.gif(name: "connecting")
         }
     }
     
@@ -1863,7 +1866,8 @@ extension ChatViewController {
         if self.conversationArrayList[position].isDownloading == true{
             uitableVc.downloaduiView.isHidden = false
             uitableVc.ivDownload.isHidden = false
-            uitableVc.ivDownload.image = UIImage.gif(name: "cloudnew")
+            //temp lib
+            //uitableVc.ivDownload.image = UIImage.gif(name: "cloudnew")
         }else{
             uitableVc.downloaduiView.isHidden = true
             uitableVc.ivDownload.isHidden = true
@@ -1874,7 +1878,8 @@ extension ChatViewController {
         if self.conversationArrayList[position].isDownloading == true{
             uitableVc.downloaduiView.isHidden = false
             uitableVc.ivDownload.isHidden = false
-            uitableVc.ivDownload.image = UIImage.gif(name: "cloudnew")
+            //temp lib
+            //uitableVc.ivDownload.image = UIImage.gif(name: "cloudnew")
         }else{
             uitableVc.downloaduiView.isHidden = true
             uitableVc.ivDownload.isHidden = true
@@ -1885,7 +1890,8 @@ extension ChatViewController {
         if self.conversationArrayList[position].isDownloading == true{
             uitableVc.downloaduiView.isHidden = false
             uitableVc.ivDownload.isHidden = false
-            uitableVc.ivDownload.image = UIImage.gif(name: "cloudnew")
+            //temp lib
+            //uitableVc.ivDownload.image = UIImage.gif(name: "cloudnew")
         }else{
             uitableVc.downloaduiView.isHidden = true
             uitableVc.ivDownload.isHidden = true
@@ -1896,7 +1902,8 @@ extension ChatViewController {
         if self.conversationArrayList[position].isDownloading == true{
             uitableVc.downloaduiView.isHidden = false
             uitableVc.ivDownload.isHidden = false
-            uitableVc.ivDownload.image = UIImage.gif(name: "cloudnew")
+            //temp lib
+//            uitableVc.ivDownload.image = UIImage.gif(name: "cloudnew")
         }else{
             uitableVc.downloaduiView.isHidden = true
             uitableVc.ivDownload.isHidden = true
@@ -3291,41 +3298,11 @@ extension ChatViewController {
 
 extension ChatViewController : UITextViewDelegate {
     
-    func textViewDidChange(_ textView: UITextView) {
+    public func textViewDidChange(_ textView: UITextView) {
         self.typingIndicatorRequest()
     }
     
 }
-
-extension ChatViewController : EmojiViewDelegate {
-
-
-    // callback when tap a emoji on keyboard
-    func emojiViewDidSelectEmoji(_ emoji: String, emojiView: EmojiView) {
-        self.msgTextField.insertText(emoji)
-
-    }
-
-    // callback when tap change keyboard button on keyboard
-    func emojiViewDidPressChangeKeyboardButton(_ emojiView: EmojiView) {
-        self.msgTextField.inputView = nil
-        self.msgTextField.keyboardType = .default
-        self.msgTextField.reloadInputViews()
-    }
-
-    // callback when tap delete button on keyboard
-    func emojiViewDidPressDeleteBackwardButton(_ emojiView: EmojiView) {
-        self.msgTextField.deleteBackward()
-    }
-
-    // callback when tap dismiss button on keyboard
-    func emojiViewDidPressDismissKeyboardButton(_ emojiView: EmojiView) {
-        self.msgTextField.resignFirstResponder()
-    }
-
-}
-
-
 
 
 extension ChatViewController :  UIImagePickerControllerDelegate, UINavigationControllerDelegate,UIDocumentPickerDelegate{
@@ -3350,7 +3327,7 @@ extension ChatViewController :  UIImagePickerControllerDelegate, UINavigationCon
     }
     
 
-    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+    public func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         if urls.count <= 5{
             var fileExtension = ""
             var fileNameWithoutExtension = ""
@@ -3626,7 +3603,7 @@ extension ChatViewController :  UIImagePickerControllerDelegate, UINavigationCon
     }
     
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         
         let img:UIImage = (info[UIImagePickerController.InfoKey.originalImage] as? UIImage)!
@@ -3699,7 +3676,7 @@ extension ChatViewController :  UIImagePickerControllerDelegate, UINavigationCon
     }
      
     
-    func imagePickerControllerDidCancel(_ picker:
+    public func imagePickerControllerDidCancel(_ picker:
                                             UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
@@ -3821,11 +3798,11 @@ extension ChatViewController : QLPreviewControllerDataSource{
   }
         
 }
-func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
+    public func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
      return 1
  }
  
- func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
+    public func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
      return self.previewItem as QLPreviewItem
  }
     
@@ -3833,7 +3810,7 @@ func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
 
 
 extension ChatViewController : UICollectionViewDelegate,UICollectionViewDataSource{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var count = 0
         if collectionView == self.uiCvTopics{
             count = self.topicsArrayList.count
@@ -3841,7 +3818,7 @@ extension ChatViewController : UICollectionViewDelegate,UICollectionViewDataSour
         return count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
        
         if collectionView == uiCvTopics{
             let cell = self.uiCvTopics.dequeueReusableCell(withReuseIdentifier: "TopicsCollectionViewCell", for: indexPath) as! TopicsCollectionViewCell
@@ -3854,7 +3831,7 @@ extension ChatViewController : UICollectionViewDelegate,UICollectionViewDataSour
     }
     
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         
         if collectionView == self.uiCvTopics{
@@ -3900,7 +3877,7 @@ extension ChatViewController : UICollectionViewDelegate,UICollectionViewDataSour
 
 
 extension ChatViewController : UICollectionViewDelegateFlowLayout{
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var width : CGFloat = 0
         var height : CGFloat = 0
         if collectionView == self.uiCvTopics{

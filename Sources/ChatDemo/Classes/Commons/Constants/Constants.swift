@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 
 @available(iOS 14.0, *)
-let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//let appDelegate = UIApplication.shared.delegate as! AppDelegate
 var withSchedule = false
 
 // MARK:- Login Type

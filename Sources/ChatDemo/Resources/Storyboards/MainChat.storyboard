@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,7 +13,7 @@
         <!--Chat View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ChatViewController" id="BYZ-38-t0r" customClass="ChatViewController" customModule="O2ChatWidget" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChatViewController" id="BYZ-38-t0r" customClass="ChatViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -482,7 +483,7 @@
         <!--Selected File Preview-->
         <scene sceneID="hlK-tr-NeQ">
             <objects>
-                <viewController storyboardIdentifier="SelectedFilePreview" id="2bZ-Fh-QGx" customClass="SelectedFilePreview" customModule="O2ChatWidget" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectedFilePreview" id="2bZ-Fh-QGx" customClass="SelectedFilePreview" customModule="ChatDemo" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Y0-9T-DtI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -715,7 +716,7 @@
         <!--Rate UsVC-->
         <scene sceneID="foW-DF-uog">
             <objects>
-                <viewController storyboardIdentifier="RateUsVC" id="f7h-lm-lXg" customClass="RateUsVC" customModule="O2ChatWidget" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RateUsVC" id="f7h-lm-lXg" customClass="RateUsVC" customModule="ChatDemo" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FBx-XC-Nca">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

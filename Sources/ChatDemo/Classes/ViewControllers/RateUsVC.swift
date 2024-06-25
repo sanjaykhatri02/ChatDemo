@@ -8,7 +8,7 @@
 
 import UIKit
 import Cosmos
-import Toaster
+//import Toaster
 
 protocol SendFeedbackProtocol{
     func sendFeedbackData(rating : Int, feedback : String, isSkipped : Bool)
