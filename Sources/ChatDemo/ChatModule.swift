@@ -10,9 +10,11 @@
 import Foundation
 
 import UIKit
+import FMDB
 
 public func createChatViewController() -> ChatViewController? {
 //    print("Test...")
+    
     let bundle = Bundle.module
     let storyboard = UIStoryboard(name: "MainChat", bundle: bundle)
     let viewController = storyboard.instantiateViewController(withIdentifier: "ChatViewController") as? ChatViewController
@@ -20,3 +22,7 @@ public func createChatViewController() -> ChatViewController? {
     
 }
 
+public func createDatabase(){
+    var dbChatObj = Singleton.sharedInstance.myLocalChatDB
+    dbChatObj.CreateChatDatabase()
+}
