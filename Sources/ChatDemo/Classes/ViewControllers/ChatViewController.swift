@@ -362,16 +362,21 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func registerTableViewCells(){
-        self.chatTableView.register(UINib(nibName: "ConversationTableViewCellNoLoginUser", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
-        self.chatTableView.register(UINib(nibName: "ConversationLoginUserTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifierLoginUser)
         
-        self.chatTableView.register(UINib(nibName: "ConversationCellImageNoLoginUser", bundle: nil), forCellReuseIdentifier: cellReuseIdentifierForImageNonLogin)
-        self.chatTableView.register(UINib(nibName: "ConversationCellImageLoginUser", bundle: nil), forCellReuseIdentifier: cellReuseIdentifierCellImageLoginUser)
-        self.chatTableView.register(UINib(nibName: "ConversationCellFIleForLoginUser", bundle: nil), forCellReuseIdentifier: cellReuseIdentifierCellFIleForLoginUser)
-        self.chatTableView.register(UINib(nibName: "ConversationCellFileNonLoginUser", bundle: nil), forCellReuseIdentifier: cellReuseIdentifierCellFIleForNonLoginUser)
+        // Assuming you want to register the nib for a table view cell
+//        let nib = UINib(nibName: "ConversationLoginUserTableViewCell", bundle: Bundle.module)
+//        tableView.register(nib, forCellReuseIdentifier: "ConversationLoginUserTableViewCell")
+            
+        self.chatTableView.register(UINib(nibName: "ConversationTableViewCellNoLoginUser", bundle: Bundle.module), forCellReuseIdentifier: cellReuseIdentifier)
+        self.chatTableView.register(UINib(nibName: "ConversationLoginUserTableViewCell", bundle: Bundle.module), forCellReuseIdentifier: cellReuseIdentifierLoginUser)
         
-        self.chatTableView.register(UINib(nibName: "ActivityLoaderCell", bundle: nil), forCellReuseIdentifier: ActivityLoaderCell)
-        self.chatTableView.register(UINib(nibName: "SystemsTVCell", bundle: nil), forCellReuseIdentifier: SystemsTVCell)
+        self.chatTableView.register(UINib(nibName: "ConversationCellImageNoLoginUser", bundle: Bundle.module), forCellReuseIdentifier: cellReuseIdentifierForImageNonLogin)
+        self.chatTableView.register(UINib(nibName: "ConversationCellImageLoginUser", bundle: Bundle.module), forCellReuseIdentifier: cellReuseIdentifierCellImageLoginUser)
+        self.chatTableView.register(UINib(nibName: "ConversationCellFIleForLoginUser", bundle: Bundle.module), forCellReuseIdentifier: cellReuseIdentifierCellFIleForLoginUser)
+        self.chatTableView.register(UINib(nibName: "ConversationCellFileNonLoginUser", bundle: Bundle.module), forCellReuseIdentifier: cellReuseIdentifierCellFIleForNonLoginUser)
+        
+        self.chatTableView.register(UINib(nibName: "ActivityLoaderCell", bundle: Bundle.module), forCellReuseIdentifier: ActivityLoaderCell)
+        self.chatTableView.register(UINib(nibName: "SystemsTVCell", bundle: Bundle.module), forCellReuseIdentifier: SystemsTVCell)
     }
 
 
