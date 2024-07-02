@@ -231,6 +231,7 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func addNewMessage(recieveMessage: RecieveMessage){
+        print("Sync Message")
         self.uploadFilesData.removeAll()
         self.fileUploadArrayList.removeAll()
         self.filesNames.removeAll()
