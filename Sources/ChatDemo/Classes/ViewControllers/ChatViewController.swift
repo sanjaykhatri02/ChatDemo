@@ -103,7 +103,7 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
     private var channelId = "f26a33d9-5b2e-4227-a456-eab45924a1d3" //"2ff350ae-bd60-4717-90e8-fb21c0b43fd6" //"f26a33d9-5b2e-4227-a456-eab45924a1d3"
     private var fcmtoken = CustomUserDefaultChat.sheard.getFcmToken()//"6901b42a-0776-41d2-ac76-6cb6f3029d53"
 //    private var conversationUuID = "748049b7-5dad-4cb8-8631-844155b73ec6"
-    private var conversationUuID = "A653E144-7D6E-4572-98B5-0440DD6131B1"
+    private var conversationUuID = ""//"A653E144-7D6E-4572-98B5-0440DD6131B1"
 //    private var conversationUuID = "5803d40c-a013-45cc-bd3b-0e547d819441"
     private var groupId : Int64 = 0
 //    private var cusId : Int64 = 154
@@ -154,11 +154,11 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
         if !CustomUserDefaultChat.sheard.getConversationUuID().isEmpty{
             self.conversationUuID = CustomUserDefaultChat.sheard.getConversationUuID();
         }
-        self.customerEmail = CustomUserDefaultChat.sheard.getCustomerEmail();
+        self.customerEmail = "new@new009.com" //CustomUserDefaultChat.sheard.getCustomerEmail();
         self.customerMobileNumber = CustomUserDefaultChat.sheard.getCustomerPhoneNumber();
         self.customerCNIC = CustomUserDefaultChat.sheard.getCustomerCnic();
         self.customerName = CustomUserDefaultChat.sheard.getCustomerName();
-        self.cusId = CustomUserDefaultChat.sheard.getCustomerID();
+        self.cusId = 1234 //CustomUserDefaultChat.sheard.getCustomerID();
 
         self.msgTextField.delegate = self
         self.chatTableView.estimatedRowHeight = 44.0

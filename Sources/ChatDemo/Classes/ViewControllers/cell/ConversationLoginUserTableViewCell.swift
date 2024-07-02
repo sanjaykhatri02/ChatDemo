@@ -24,15 +24,15 @@ class ConversationLoginUserTableViewCell: UITableViewCell {
         self.setCardView(view: self.uiViewMessage)
 
     }
-
+    
     func setCardView(view : UIView){
-
-            view.layer.masksToBounds = false
-            view.layer.shadowOffset = CGSizeMake(0, 0);
-            view.layer.shadowRadius = 0.7;
-            view.layer.shadowOpacity = 0.3;
-
-        }
+        
+        view.layer.masksToBounds = false
+        view.layer.shadowOffset = CGSizeMake(0, 0);
+        view.layer.shadowRadius = 0.7;
+        view.layer.shadowOpacity = 0.3;
+        
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
