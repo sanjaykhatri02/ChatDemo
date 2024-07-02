@@ -637,8 +637,8 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                     
                                     let aCell = self.chatTableView.dequeueReusableCell(withIdentifier: self.cellReuseIdentifierCellFIleForLoginUser,for: indexPath) as! ConversationCellFIleForLoginUser
                                     aCell.contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
-                                    
-                                    aCell.ivImageFIleIcon.image = UIImage(named: "zip")
+                                    aCell.ivImageFIleIcon.image = UIImage(named: "zip", in: Bundle.module, compatibleWith: nil)
+//                                    aCell.ivImageFIleIcon.image = UIImage(named: "zip")
                                     aCell.lblFileName.text = self.conversationArrayList[indexPath.row].content!
                                     aCell.lblTIme.text = self.utcToLocal(dateStr: self.conversationArrayList[indexPath.row].timestamp ?? "")
                                     if self.conversationArrayList[indexPath.row].caption != "" && self.conversationArrayList[indexPath.row].caption != nil{
@@ -674,18 +674,24 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                     if self.conversationArrayList[indexPath.row].isNotNewChat == true{
                                         if self.conversationArrayList[indexPath.row].isUpdateStatus == true{
                                             if self.conversationArrayList[indexPath.row].isSeen! {
-                                                aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                                //aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                                aCell.ivFileStatus.image = UIImage(named: "read_reciept", in: Bundle.module, compatibleWith: nil)
                                             }else{
-                                                aCell.ivFileStatus.image = UIImage(named: "tick")
+                                                //aCell.ivFileStatus.image = UIImage(named: "tick")
+                                                aCell.ivFileStatus.image = UIImage(named: "tick", in: Bundle.module, compatibleWith: nil)
                                             }
                                         }else{
-                                            aCell.ivFileStatus.image = UIImage(named: "send_messagetime")
+                                            //aCell.ivFileStatus.image = UIImage(named: "send_messagetime")
+                                            aCell.ivFileStatus.image = UIImage(named: "send_messagetime", in: Bundle.module, compatibleWith: nil)
                                         }
                                     }else{
                                         if self.conversationArrayList[indexPath.row].isSeen! {
-                                            aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                            // Load the image from the Swift Package bundle
+                                            aCell.ivFileStatus.image = UIImage(named: "read_reciept", in: Bundle.module, compatibleWith: nil)
+                                            //aCell.ivFileStatus.image = UIImage(named: "read_reciept")
                                         }else{
-                                            aCell.ivFileStatus.image = UIImage(named: "tick")
+                                            //aCell.ivFileStatus.image = UIImage(named: "tick")
+                                            aCell.ivFileStatus.image = UIImage(named: "tick", in: Bundle.module, compatibleWith: nil)
                                         }
                                         
                                     }
@@ -696,8 +702,8 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                     
                                     let aCell = self.chatTableView.dequeueReusableCell(withIdentifier: self.cellReuseIdentifierCellFIleForLoginUser,for: indexPath) as! ConversationCellFIleForLoginUser
                                     aCell.contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
-                                    
-                                    aCell.ivImageFIleIcon.image = UIImage(named: "rar")
+                                    aCell.ivImageFIleIcon.image = UIImage(named: "rar", in: Bundle.module, compatibleWith: nil)
+                                    //aCell.ivImageFIleIcon.image = UIImage(named: "rar")
                                     aCell.lblFileName.text = self.conversationArrayList[indexPath.row].content!
                                     aCell.lblTIme.text = self.utcToLocal(dateStr: self.conversationArrayList[indexPath.row].timestamp ?? "")
                                     if self.conversationArrayList[indexPath.row].caption != "" && self.conversationArrayList[indexPath.row].caption != nil{
@@ -731,19 +737,23 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                     if self.conversationArrayList[indexPath.row].isNotNewChat == true{
                                         if self.conversationArrayList[indexPath.row].isUpdateStatus == true{
                                             if self.conversationArrayList[indexPath.row].isSeen! {
-                                                aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                                aCell.ivFileStatus.image = UIImage(named: "read_reciept", in: Bundle.module, compatibleWith: nil)
+                                                //aCell.ivFileStatus.image = UIImage(named: "read_reciept")
                                             }else{
-                                                aCell.ivFileStatus.image = UIImage(named: "tick")
-                                                
+                                                //aCell.ivFileStatus.image = UIImage(named: "tick")
+                                                aCell.ivFileStatus.image = UIImage(named: "tick", in: Bundle.module, compatibleWith: nil)
                                             }
                                         }else{
-                                            aCell.ivFileStatus.image = UIImage(named: "send_messagetime")
+                                            //aCell.ivFileStatus.image = UIImage(named: "send_messagetime")
+                                            aCell.ivFileStatus.image = UIImage(named: "send_messagetime", in: Bundle.module, compatibleWith: nil)
                                         }
                                     }else{
                                         if self.conversationArrayList[indexPath.row].isSeen! {
-                                            aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                            //aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                            aCell.ivFileStatus.image = UIImage(named: "read_reciept", in: Bundle.module, compatibleWith: nil)
                                         }else{
-                                            aCell.ivFileStatus.image = UIImage(named: "tick")
+                                            //aCell.ivFileStatus.image = UIImage(named: "tick")
+                                            aCell.ivFileStatus.image = UIImage(named: "tick", in: Bundle.module, compatibleWith: nil)
                                         }
                                         
                                     }
@@ -756,8 +766,8 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                     
                                     let aCell = self.chatTableView.dequeueReusableCell(withIdentifier: self.cellReuseIdentifierCellFIleForLoginUser,for: indexPath) as! ConversationCellFIleForLoginUser
                                     aCell.contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
-                                    
-                                    aCell.ivImageFIleIcon.image = UIImage(named: "sevenz")
+                                    aCell.ivImageFIleIcon.image = UIImage(named: "sevenz", in: Bundle.module, compatibleWith: nil)
+                                   // aCell.ivImageFIleIcon.image = UIImage(named: "sevenz")
                                     aCell.lblFileName.text = self.conversationArrayList[indexPath.row].content!
                                     aCell.lblTIme.text = self.utcToLocal(dateStr: self.conversationArrayList[indexPath.row].timestamp ?? "")
                                     if self.conversationArrayList[indexPath.row].caption != "" && self.conversationArrayList[indexPath.row].caption != nil{
@@ -791,19 +801,23 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                     if self.conversationArrayList[indexPath.row].isNotNewChat == true{
                                         if self.conversationArrayList[indexPath.row].isUpdateStatus == true{
                                             if self.conversationArrayList[indexPath.row].isSeen! {
-                                                aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                                //aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                                aCell.ivFileStatus.image = UIImage(named: "read_reciept", in: Bundle.module, compatibleWith: nil)
                                             }else{
-                                                aCell.ivFileStatus.image = UIImage(named: "tick")
-                                                
+                                                //aCell.ivFileStatus.image = UIImage(named: "tick")
+                                                aCell.ivFileStatus.image = UIImage(named: "tick", in: Bundle.module, compatibleWith: nil)
                                             }
                                         }else{
-                                            aCell.ivFileStatus.image = UIImage(named: "send_messagetime")
+                                            //aCell.ivFileStatus.image = UIImage(named: "send_messagetime")
+                                            aCell.ivFileStatus.image = UIImage(named: "send_messagetime", in: Bundle.module, compatibleWith: nil)
                                         }
                                     }else{
                                         if self.conversationArrayList[indexPath.row].isSeen! {
-                                            aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                            //aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                            aCell.ivFileStatus.image = UIImage(named: "read_reciept", in: Bundle.module, compatibleWith: nil)
                                         }else{
-                                            aCell.ivFileStatus.image = UIImage(named: "tick")
+                                            //aCell.ivFileStatus.image = UIImage(named: "tick")
+                                            aCell.ivFileStatus.image = UIImage(named: "tick", in: Bundle.module, compatibleWith: nil)
                                         }
                                     }
                                     self.showDownloadIconFileLoginUser(uitableVc: aCell, position: indexPath.row)
@@ -815,8 +829,8 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                     
                                     let aCell = self.chatTableView.dequeueReusableCell(withIdentifier: self.cellReuseIdentifierCellFIleForLoginUser,for: indexPath) as! ConversationCellFIleForLoginUser
                                     aCell.contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
-                                    
-                                    aCell.ivImageFIleIcon.image = UIImage(named: "txt")
+                                    aCell.ivImageFIleIcon.image = UIImage(named: "txt", in: Bundle.module, compatibleWith: nil)
+                                    //aCell.ivImageFIleIcon.image = UIImage(named: "txt")
                                     aCell.lblFileName.text = self.conversationArrayList[indexPath.row].content!
                                     aCell.lblTIme.text = self.utcToLocal(dateStr: self.conversationArrayList[indexPath.row].timestamp ?? "")
                                     if self.conversationArrayList[indexPath.row].caption != "" && self.conversationArrayList[indexPath.row].caption != nil{
@@ -851,19 +865,24 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                     if self.conversationArrayList[indexPath.row].isNotNewChat == true{
                                         if self.conversationArrayList[indexPath.row].isUpdateStatus == true{
                                             if self.conversationArrayList[indexPath.row].isSeen! {
-                                                aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                                //aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                                aCell.ivFileStatus.image = UIImage(named: "read_reciept", in: Bundle.module, compatibleWith: nil)
                                             }else{
-                                                aCell.ivFileStatus.image = UIImage(named: "tick")
-                                                
+                                                //aCell.ivFileStatus.image = UIImage(named: "tick")
+                                                aCell.ivFileStatus.image = UIImage(named: "tick", in: Bundle.module, compatibleWith: nil)
                                             }
                                         }else{
-                                            aCell.ivFileStatus.image = UIImage(named: "send_messagetime")
+//                                            aCell.ivFileStatus.image = UIImage(named: "send_messagetime")
+                                            aCell.ivFileStatus.image = UIImage(named: "send_messagetime", in: Bundle.module, compatibleWith: nil)
                                         }
                                     }else{
                                         if self.conversationArrayList[indexPath.row].isSeen! {
-                                            aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                            //aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                            aCell.ivFileStatus.image = UIImage(named: "read_reciept", in: Bundle.module, compatibleWith: nil)
+
                                         }else{
-                                            aCell.ivFileStatus.image = UIImage(named: "tick")
+                                            //aCell.ivFileStatus.image = UIImage(named: "tick")
+                                            aCell.ivFileStatus.image = UIImage(named: "tick", in: Bundle.module, compatibleWith: nil)
                                         }
                                     }
                                     self.showDownloadIconFileLoginUser(uitableVc: aCell, position: indexPath.row)
@@ -874,8 +893,8 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                     
                                     let aCell = self.chatTableView.dequeueReusableCell(withIdentifier: self.cellReuseIdentifierCellFIleForLoginUser,for: indexPath) as! ConversationCellFIleForLoginUser
                                     aCell.contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
-                                    
-                                    aCell.ivImageFIleIcon.image = UIImage(named: "pdf")
+                                    aCell.ivImageFIleIcon.image = UIImage(named: "pdf", in: Bundle.module, compatibleWith: nil)
+                                    //aCell.ivImageFIleIcon.image = UIImage(named: "pdf")
                                     aCell.lblFileName.text = self.conversationArrayList[indexPath.row].content!
                                     aCell.lblTIme.text = self.utcToLocal(dateStr: self.conversationArrayList[indexPath.row].timestamp ?? "")
                                     if self.conversationArrayList[indexPath.row].caption != "" && self.conversationArrayList[indexPath.row].caption != nil{
@@ -911,19 +930,23 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                     if self.conversationArrayList[indexPath.row].isNotNewChat == true{
                                         if self.conversationArrayList[indexPath.row].isUpdateStatus == true{
                                             if self.conversationArrayList[indexPath.row].isSeen! {
-                                                aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                                //aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                                aCell.ivFileStatus.image = UIImage(named: "read_reciept", in: Bundle.module, compatibleWith: nil)
                                             }else{
-                                                aCell.ivFileStatus.image = UIImage(named: "tick")
-                                                
+                                                //aCell.ivFileStatus.image = UIImage(named: "tick")
+                                                aCell.ivFileStatus.image = UIImage(named: "tick", in: Bundle.module, compatibleWith: nil)
                                             }
                                         }else{
-                                            aCell.ivFileStatus.image = UIImage(named: "send_messagetime")
+                                            //aCell.ivFileStatus.image = UIImage(named: "send_messagetime")
+                                            aCell.ivFileStatus.image = UIImage(named: "send_messagetime", in: Bundle.module, compatibleWith: nil)
                                         }
                                     }else{
                                         if self.conversationArrayList[indexPath.row].isSeen! {
-                                            aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+//                                            aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                            aCell.ivFileStatus.image = UIImage(named: "read_reciept", in: Bundle.module, compatibleWith: nil)
                                         }else{
-                                            aCell.ivFileStatus.image = UIImage(named: "tick")
+                                            //aCell.ivFileStatus.image = UIImage(named: "tick")
+                                            aCell.ivFileStatus.image = UIImage(named: "tick", in: Bundle.module, compatibleWith: nil)
                                         }
                                     }
                                     self.showDownloadIconFileLoginUser(uitableVc: aCell, position: indexPath.row)
@@ -933,8 +956,8 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                     
                                     let aCell = self.chatTableView.dequeueReusableCell(withIdentifier: self.cellReuseIdentifierCellFIleForLoginUser,for: indexPath) as! ConversationCellFIleForLoginUser
                                     aCell.contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
-                                    
-                                    aCell.ivImageFIleIcon.image = UIImage(named: "msword_ic")
+                                    aCell.ivImageFIleIcon.image = UIImage(named: "msword_ic", in: Bundle.module, compatibleWith: nil)
+                                    //aCell.ivImageFIleIcon.image = UIImage(named: "msword_ic")
                                     aCell.lblFileName.text = self.conversationArrayList[indexPath.row].content!
                                     aCell.lblTIme.text = self.utcToLocal(dateStr: self.conversationArrayList[indexPath.row].timestamp ?? "")
                                     if self.conversationArrayList[indexPath.row].caption != "" && self.conversationArrayList[indexPath.row].caption != nil{
@@ -968,19 +991,23 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                     if self.conversationArrayList[indexPath.row].isNotNewChat == true{
                                         if self.conversationArrayList[indexPath.row].isUpdateStatus == true{
                                             if self.conversationArrayList[indexPath.row].isSeen! {
-                                                aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                                //aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                                aCell.ivFileStatus.image = UIImage(named: "read_reciept", in: Bundle.module, compatibleWith: nil)
                                             }else{
-                                                aCell.ivFileStatus.image = UIImage(named: "tick")
-                                                
+//                                                aCell.ivFileStatus.image = UIImage(named: "tick")
+                                                aCell.ivFileStatus.image = UIImage(named: "tick", in: Bundle.module, compatibleWith: nil)
                                             }
                                         }else{
-                                            aCell.ivFileStatus.image = UIImage(named: "send_messagetime")
+//                                            aCell.ivFileStatus.image = UIImage(named: "send_messagetime")
+                                            aCell.ivFileStatus.image = UIImage(named: "send_messagetime", in: Bundle.module, compatibleWith: nil)
                                         }
                                     }else{
                                         if self.conversationArrayList[indexPath.row].isSeen! {
-                                            aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                            //aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                            aCell.ivFileStatus.image = UIImage(named: "read_reciept", in: Bundle.module, compatibleWith: nil)
                                         }else{
-                                            aCell.ivFileStatus.image = UIImage(named: "tick")
+                                            //aCell.ivFileStatus.image = UIImage(named: "tick")
+                                            aCell.ivFileStatus.image = UIImage(named: "tick", in: Bundle.module, compatibleWith: nil)
                                         }
                                     }
                                     self.showDownloadIconFileLoginUser(uitableVc: aCell, position: indexPath.row)
@@ -990,8 +1017,8 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                     
                                     let aCell = self.chatTableView.dequeueReusableCell(withIdentifier: self.cellReuseIdentifierCellFIleForLoginUser,for: indexPath) as! ConversationCellFIleForLoginUser
                                     aCell.contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
-                                    
-                                    aCell.ivImageFIleIcon.image = UIImage(named: "docx_ic")
+                                    aCell.ivImageFIleIcon.image = UIImage(named: "docx_ic", in: Bundle.module, compatibleWith: nil)
+                                    //aCell.ivImageFIleIcon.image = UIImage(named: "docx_ic")
                                     aCell.lblFileName.text = self.conversationArrayList[indexPath.row].content!
                                     aCell.lblTIme.text = self.utcToLocal(dateStr: self.conversationArrayList[indexPath.row].timestamp ?? "")
                                     if self.conversationArrayList[indexPath.row].caption != "" && self.conversationArrayList[indexPath.row].caption != nil{
@@ -1025,19 +1052,25 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                     if self.conversationArrayList[indexPath.row].isNotNewChat == true{
                                         if self.conversationArrayList[indexPath.row].isUpdateStatus == true{
                                             if self.conversationArrayList[indexPath.row].isSeen! {
-                                                aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+//                                                aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                                aCell.ivFileStatus.image = UIImage(named: "read_reciept", in: Bundle.module, compatibleWith: nil)
                                             }else{
-                                                aCell.ivFileStatus.image = UIImage(named: "tick")
+//                                                aCell.ivFileStatus.image = UIImage(named: "tick")
+                                                aCell.ivFileStatus.image = UIImage(named: "tick", in: Bundle.module, compatibleWith: nil)
                                                 
                                             }
                                         }else{
-                                            aCell.ivFileStatus.image = UIImage(named: "send_messagetime")
+//                                            aCell.ivFileStatus.image = UIImage(named: "send_messagetime")
+                                            aCell.ivFileStatus.image = UIImage(named: "send_messagetime", in: Bundle.module, compatibleWith: nil)
                                         }
                                     }else{
                                         if self.conversationArrayList[indexPath.row].isSeen! {
-                                            aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                            aCell.ivFileStatus.image = UIImage(named: "read_reciept", in: Bundle.module, compatibleWith: nil)
+
+//                                            aCell.ivFileStatus.image = UIImage(named: "read_reciept")
                                         }else{
-                                            aCell.ivFileStatus.image = UIImage(named: "tick")
+//                                            aCell.ivFileStatus.image = UIImage(named: "tick")
+                                            aCell.ivFileStatus.image = UIImage(named: "tick", in: Bundle.module, compatibleWith: nil)
                                         }
                                     }
                                     self.showDownloadIconFileLoginUser(uitableVc: aCell, position: indexPath.row)
@@ -1045,8 +1078,8 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                 } else if self.conversationArrayList[indexPath.row].files?[0].type == "doc" || self.conversationArrayList[indexPath.row].files?[0].type == "application/doc" || self.conversationArrayList[indexPath.row].files?[0].type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document" {
                                     let aCell = self.chatTableView.dequeueReusableCell(withIdentifier: self.cellReuseIdentifierCellFIleForLoginUser,for: indexPath) as! ConversationCellFIleForLoginUser
                                     aCell.contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
-                                    
-                                    aCell.ivImageFIleIcon.image = UIImage(named: "doc")
+                                    aCell.ivImageFIleIcon.image = UIImage(named: "doc", in: Bundle.module, compatibleWith: nil)
+                                   // aCell.ivImageFIleIcon.image = UIImage(named: "doc")
                                     aCell.lblFileName.text = self.conversationArrayList[indexPath.row].content!
                                     aCell.lblTIme.text = self.utcToLocal(dateStr: self.conversationArrayList[indexPath.row].timestamp ?? "")
                                     if self.conversationArrayList[indexPath.row].caption != "" && self.conversationArrayList[indexPath.row].caption != nil{
@@ -1080,20 +1113,24 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                     if self.conversationArrayList[indexPath.row].isNotNewChat == true{
                                         if self.conversationArrayList[indexPath.row].isUpdateStatus == true{
                                             if self.conversationArrayList[indexPath.row].isSeen! {
-                                                aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                                aCell.ivFileStatus.image = UIImage(named: "read_reciept", in: Bundle.module, compatibleWith: nil)
+                                                //aCell.ivFileStatus.image = UIImage(named: "read_reciept")
                                             }else{
-                                                aCell.ivFileStatus.image = UIImage(named: "tick")
-                                                
+                                                //aCell.ivFileStatus.image = UIImage(named: "tick")
+                                                aCell.ivFileStatus.image = UIImage(named: "tick", in: Bundle.module, compatibleWith: nil)
                                             }
                                             
                                         }else{
-                                            aCell.ivFileStatus.image = UIImage(named: "send_messagetime")
+//                                            aCell.ivFileStatus.image = UIImage(named: "send_messagetime")
+                                            aCell.ivFileStatus.image = UIImage(named: "send_messagetime", in: Bundle.module, compatibleWith: nil)
                                         }
                                     }else{
                                         if self.conversationArrayList[indexPath.row].isSeen! {
-                                            aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+//                                            aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                            aCell.ivFileStatus.image = UIImage(named: "read_reciept", in: Bundle.module, compatibleWith: nil)
                                         }else{
-                                            aCell.ivFileStatus.image = UIImage(named: "tick")
+//                                            aCell.ivFileStatus.image = UIImage(named: "tick")
+                                            aCell.ivFileStatus.image = UIImage(named: "tick", in: Bundle.module, compatibleWith: nil)
                                         }
                                     }
                                     self.showDownloadIconFileLoginUser(uitableVc: aCell, position: indexPath.row)
@@ -1103,8 +1140,8 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                     
                                     let aCell = self.chatTableView.dequeueReusableCell(withIdentifier: self.cellReuseIdentifierCellFIleForLoginUser,for: indexPath) as! ConversationCellFIleForLoginUser
                                     aCell.contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
-                                    
-                                    aCell.ivImageFIleIcon.image = UIImage(named: "xls")
+                                    aCell.ivImageFIleIcon.image = UIImage(named: "xls", in: Bundle.module, compatibleWith: nil)
+                                    //aCell.ivImageFIleIcon.image = UIImage(named: "xls")
                                     aCell.lblFileName.text = self.conversationArrayList[indexPath.row].content!
                                     aCell.lblTIme.text = self.utcToLocal(dateStr: self.conversationArrayList[indexPath.row].timestamp ?? "")
                                     if self.conversationArrayList[indexPath.row].caption != "" && self.conversationArrayList[indexPath.row].caption != nil{
@@ -1138,19 +1175,23 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                     if self.conversationArrayList[indexPath.row].isNotNewChat == true{
                                         if self.conversationArrayList[indexPath.row].isUpdateStatus == true{
                                             if self.conversationArrayList[indexPath.row].isSeen! {
-                                                aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                                //aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                                aCell.ivFileStatus.image = UIImage(named: "read_reciept", in: Bundle.module, compatibleWith: nil)
                                             }else{
-                                                aCell.ivFileStatus.image = UIImage(named: "tick")
-                                                
+//                                                aCell.ivFileStatus.image = UIImage(named: "tick")
+                                                aCell.ivFileStatus.image = UIImage(named: "tick", in: Bundle.module, compatibleWith: nil)
                                             }
                                         }else{
-                                            aCell.ivFileStatus.image = UIImage(named: "send_messagetime")
+//                                            aCell.ivFileStatus.image = UIImage(named: "send_messagetime")
+                                            aCell.ivFileStatus.image = UIImage(named: "send_messagetime", in: Bundle.module, compatibleWith: nil)
                                         }
                                     }else{
                                         if self.conversationArrayList[indexPath.row].isSeen! {
-                                            aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                            //aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                            aCell.ivFileStatus.image = UIImage(named: "read_reciept", in: Bundle.module, compatibleWith: nil)
                                         }else{
-                                            aCell.ivFileStatus.image = UIImage(named: "tick")
+//                                            aCell.ivFileStatus.image = UIImage(named: "tick")
+                                            aCell.ivFileStatus.image = UIImage(named: "tick", in: Bundle.module, compatibleWith: nil)
                                         }
                                     }
                                     self.showDownloadIconFileLoginUser(uitableVc: aCell, position: indexPath.row)
@@ -1159,8 +1200,8 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                 else if self.conversationArrayList[indexPath.row].files?[0].type == "xlsx" || self.conversationArrayList[indexPath.row].files?[0].type == "application/xlsx"{
                                     let aCell = self.chatTableView.dequeueReusableCell(withIdentifier: self.cellReuseIdentifierCellFIleForLoginUser,for: indexPath) as! ConversationCellFIleForLoginUser
                                     aCell.contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
-                                    
-                                    aCell.ivImageFIleIcon.image = UIImage(named: "xlsx")
+                                    aCell.ivImageFIleIcon.image = UIImage(named: "xlsx", in: Bundle.module, compatibleWith: nil)
+                                    //aCell.ivImageFIleIcon.image = UIImage(named: "xlsx")
                                     aCell.lblFileName.text = self.conversationArrayList[indexPath.row].content!
                                     aCell.lblTIme.text = self.utcToLocal(dateStr: self.conversationArrayList[indexPath.row].timestamp ?? "")
                                     
@@ -1196,19 +1237,23 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                     if self.conversationArrayList[indexPath.row].isNotNewChat == true{
                                         if self.conversationArrayList[indexPath.row].isUpdateStatus == true{
                                             if self.conversationArrayList[indexPath.row].isSeen! {
-                                                aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                                aCell.ivFileStatus.image = UIImage(named: "read_reciept", in: Bundle.module, compatibleWith: nil)
+                                                //aCell.ivFileStatus.image = UIImage(named: "read_reciept")
                                             }else{
-                                                aCell.ivFileStatus.image = UIImage(named: "tick")
-                                                
+                                                //aCell.ivFileStatus.image = UIImage(named: "tick")
+                                                aCell.ivFileStatus.image = UIImage(named: "tick", in: Bundle.module, compatibleWith: nil)
                                             }
                                         }else{
-                                            aCell.ivFileStatus.image = UIImage(named: "send_messagetime")
+                                            //aCell.ivFileStatus.image = UIImage(named: "send_messagetime")
+                                            aCell.ivFileStatus.image = UIImage(named: "send_messagetime", in: Bundle.module, compatibleWith: nil)
                                         }
                                     }else{
                                         if self.conversationArrayList[indexPath.row].isSeen! {
-                                            aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+//                                            aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                            aCell.ivFileStatus.image = UIImage(named: "read_reciept", in: Bundle.module, compatibleWith: nil)
                                         }else{
-                                            aCell.ivFileStatus.image = UIImage(named: "tick")
+//                                            aCell.ivFileStatus.image = UIImage(named: "tick")
+                                            aCell.ivFileStatus.image = UIImage(named: "tick", in: Bundle.module, compatibleWith: nil)
                                         }
                                     }
                                     self.showDownloadIconFileLoginUser(uitableVc: aCell, position: indexPath.row)
@@ -1217,8 +1262,8 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                 } else if self.conversationArrayList[indexPath.row].files?[0].type == "csv" || self.conversationArrayList[indexPath.row].files?[0].type == "application/csv"{
                                     let aCell = self.chatTableView.dequeueReusableCell(withIdentifier: self.cellReuseIdentifierCellFIleForLoginUser,for: indexPath) as! ConversationCellFIleForLoginUser
                                     aCell.contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
-                                    
-                                    aCell.ivImageFIleIcon.image = UIImage(named: "csv")
+                                    aCell.ivImageFIleIcon.image = UIImage(named: "csv", in: Bundle.module, compatibleWith: nil)
+                                    //aCell.ivImageFIleIcon.image = UIImage(named: "csv")
                                     aCell.lblFileName.text = self.conversationArrayList[indexPath.row].content!
                                     aCell.lblTIme.text = self.utcToLocal(dateStr: self.conversationArrayList[indexPath.row].timestamp ?? "")
                                     if self.conversationArrayList[indexPath.row].caption != "" && self.conversationArrayList[indexPath.row].caption != nil{
@@ -1252,19 +1297,23 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                     if self.conversationArrayList[indexPath.row].isNotNewChat == true{
                                         if self.conversationArrayList[indexPath.row].isUpdateStatus == true{
                                             if self.conversationArrayList[indexPath.row].isSeen! {
-                                                aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                                //aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                                aCell.ivFileStatus.image = UIImage(named: "read_reciept", in: Bundle.module, compatibleWith: nil)
                                             }else{
-                                                aCell.ivFileStatus.image = UIImage(named: "tick")
-                                                
+                                                //aCell.ivFileStatus.image = UIImage(named: "tick")
+                                                aCell.ivFileStatus.image = UIImage(named: "tick", in: Bundle.module, compatibleWith: nil)
                                             }
                                         }else{
-                                            aCell.ivFileStatus.image = UIImage(named: "send_messagetime")
+//                                            aCell.ivFileStatus.image = UIImage(named: "send_messagetime")
+                                            aCell.ivFileStatus.image = UIImage(named: "send_messagetime", in: Bundle.module, compatibleWith: nil)
                                         }
                                     }else{
                                         if self.conversationArrayList[indexPath.row].isSeen! {
-                                            aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                            //aCell.ivFileStatus.image = UIImage(named: "read_reciept")
+                                            aCell.ivFileStatus.image = UIImage(named: "read_reciept", in: Bundle.module, compatibleWith: nil)
                                         }else{
-                                            aCell.ivFileStatus.image = UIImage(named: "tick")
+                                            //aCell.ivFileStatus.image = UIImage(named: "tick")
+                                            aCell.ivFileStatus.image = UIImage(named: "tick", in: Bundle.module, compatibleWith: nil)
                                         }
                                     }
                                     self.showDownloadIconFileLoginUser(uitableVc: aCell, position: indexPath.row)
@@ -1331,19 +1380,23 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                     if self.conversationArrayList[indexPath.row].isNotNewChat == true{
                                         if self.conversationArrayList[indexPath.row].isUpdateStatus == true{
                                             if self.conversationArrayList[indexPath.row].isSeen! {
-                                                aCell.imgageStatus.image = UIImage(named: "read_reciept")
+                                                //aCell.imgageStatus.image = UIImage(named: "read_reciept")
+                                                aCell.imgageStatus.image = UIImage(named: "read_reciept", in: Bundle.module, compatibleWith: nil)
                                             }else{
-                                                aCell.imgageStatus.image = UIImage(named: "tick")
-                                                
+//                                                aCell.imgageStatus.image = UIImage(named: "tick")
+                                                aCell.imgageStatus.image = UIImage(named: "tick", in: Bundle.module, compatibleWith: nil)
                                             }
                                         }else{
-                                            aCell.imgageStatus.image = UIImage(named: "send_messagetime")
+                                            //aCell.imgageStatus.image = UIImage(named: "send_messagetime")
+                                            aCell.imgageStatus.image = UIImage(named: "send_messagetime", in: Bundle.module, compatibleWith: nil)
                                         }
                                     }else{
                                         if self.conversationArrayList[indexPath.row].isSeen! {
-                                            aCell.imgageStatus.image = UIImage(named: "read_reciept")
+                                            //aCell.imgageStatus.image = UIImage(named: "read_reciept")
+                                            aCell.imgageStatus.image = UIImage(named: "read_reciept", in: Bundle.module, compatibleWith: nil)
                                         }else{
-                                            aCell.imgageStatus.image = UIImage(named: "tick")
+                                            //aCell.imgageStatus.image = UIImage(named: "tick")
+                                            aCell.imgageStatus.image = UIImage(named: "tick", in: Bundle.module, compatibleWith: nil)
                                         }
                                     }
                                     self.showDownloadIconImageLoginUser(uitableVc: aCell, position: indexPath.row)
@@ -1363,8 +1416,8 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                 
                                 let aCell = self.chatTableView.dequeueReusableCell(withIdentifier: self.cellReuseIdentifierCellFIleForNonLoginUser,for: indexPath) as! ConversationCellFileNonLoginUser
                                 aCell.contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
-                                
-                                aCell.ivImageIcon.image = UIImage(named: "zip")
+                                aCell.ivImageIcon.image = UIImage(named: "zip", in: Bundle.module, compatibleWith: nil)
+                                //aCell.ivImageIcon.image = UIImage(named: "zip")
                                 aCell.lblFileName.text = self.conversationArrayList[indexPath.row].content!
                                 aCell.lblTime.text = self.utcToLocal(dateStr: self.conversationArrayList[indexPath.row].timestamp ?? "")
                                 if self.conversationArrayList[indexPath.row].caption != "" && self.conversationArrayList[indexPath.row].caption != nil{
@@ -1382,8 +1435,8 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                 
                                 let aCell = self.chatTableView.dequeueReusableCell(withIdentifier: self.cellReuseIdentifierCellFIleForNonLoginUser,for: indexPath) as! ConversationCellFileNonLoginUser
                                 aCell.contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
-                                
-                                aCell.ivImageIcon.image = UIImage(named: "rar")
+                                aCell.ivImageIcon.image = UIImage(named: "rar", in: Bundle.module, compatibleWith: nil)
+                                //aCell.ivImageIcon.image = UIImage(named: "rar")
                                 aCell.lblFileName.text = self.conversationArrayList[indexPath.row].content!
                                 aCell.lblTime.text = self.utcToLocal(dateStr: self.conversationArrayList[indexPath.row].timestamp ?? "")
                                 if self.conversationArrayList[indexPath.row].caption != "" && self.conversationArrayList[indexPath.row].caption != nil{
@@ -1403,8 +1456,8 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                 
                                 let aCell = self.chatTableView.dequeueReusableCell(withIdentifier: self.cellReuseIdentifierCellFIleForNonLoginUser,for: indexPath) as! ConversationCellFileNonLoginUser
                                 aCell.contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
-                                
-                                aCell.ivImageIcon.image = UIImage(named: "sevenz")
+                                aCell.ivImageIcon.image = UIImage(named: "sevenz", in: Bundle.module, compatibleWith: nil)
+                                //aCell.ivImageIcon.image = UIImage(named: "sevenz")
                                 aCell.lblFileName.text = self.conversationArrayList[indexPath.row].content!
                                 aCell.lblTime.text = self.utcToLocal(dateStr: self.conversationArrayList[indexPath.row].timestamp ?? "")
                                 if self.conversationArrayList[indexPath.row].caption != "" && self.conversationArrayList[indexPath.row].caption != nil{
@@ -1424,8 +1477,8 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                 
                                 let aCell = self.chatTableView.dequeueReusableCell(withIdentifier: self.cellReuseIdentifierCellFIleForNonLoginUser,for: indexPath) as! ConversationCellFileNonLoginUser
                                 aCell.contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
-                                
-                                aCell.ivImageIcon.image = UIImage(named: "txt_ic")
+                                aCell.ivImageIcon.image = UIImage(named: "txt_ic", in: Bundle.module, compatibleWith: nil)
+                                //aCell.ivImageIcon.image = UIImage(named: "txt_ic")
                                 aCell.lblFileName.text = self.conversationArrayList[indexPath.row].content!
                                 aCell.lblTime.text = self.utcToLocal(dateStr: self.conversationArrayList[indexPath.row].timestamp ?? "")
                                 if self.conversationArrayList[indexPath.row].caption != "" && self.conversationArrayList[indexPath.row].caption != nil{
@@ -1445,8 +1498,8 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                 
                                 let aCell = self.chatTableView.dequeueReusableCell(withIdentifier: self.cellReuseIdentifierCellFIleForNonLoginUser,for: indexPath) as! ConversationCellFileNonLoginUser
                                 aCell.contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
-                                
-                                aCell.ivImageIcon.image = UIImage(named: "pdf")
+                                aCell.ivImageIcon.image = UIImage(named: "pdf", in: Bundle.module, compatibleWith: nil)
+                                //aCell.ivImageIcon.image = UIImage(named: "pdf")
                                 aCell.lblFileName.text = self.conversationArrayList[indexPath.row].content!
                                 aCell.lblTime.text = self.utcToLocal(dateStr: self.conversationArrayList[indexPath.row].timestamp ?? "")
                                 if self.conversationArrayList[indexPath.row].caption != "" && self.conversationArrayList[indexPath.row].caption != nil{
@@ -1464,8 +1517,8 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                             else if self.conversationArrayList[indexPath.row].files?[0].type == "msword" || self.conversationArrayList[indexPath.row].files?[0].type == "application/msword"{
                                 let aCell = self.chatTableView.dequeueReusableCell(withIdentifier: self.cellReuseIdentifierCellFIleForNonLoginUser,for: indexPath) as! ConversationCellFileNonLoginUser
                                 aCell.contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
-                                
-                                aCell.ivImageIcon.image = UIImage(named: "msword_ic")
+                                aCell.ivImageIcon.image = UIImage(named: "msword_ic", in: Bundle.module, compatibleWith: nil)
+                                //aCell.ivImageIcon.image = UIImage(named: "msword_ic")
                                 aCell.lblFileName.text = self.conversationArrayList[indexPath.row].content!
                                 aCell.lblTime.text = self.utcToLocal(dateStr: self.conversationArrayList[indexPath.row].timestamp ?? "")
                                 if self.conversationArrayList[indexPath.row].caption != "" && self.conversationArrayList[indexPath.row].caption != nil{
@@ -1483,8 +1536,8 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                 
                                 let aCell = self.chatTableView.dequeueReusableCell(withIdentifier: self.cellReuseIdentifierCellFIleForNonLoginUser,for: indexPath) as! ConversationCellFileNonLoginUser
                                 aCell.contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
-                                
-                                aCell.ivImageIcon.image = UIImage(named: "docx_ic")
+                                aCell.ivImageIcon.image = UIImage(named: "docx_ic", in: Bundle.module, compatibleWith: nil)
+                                //aCell.ivImageIcon.image = UIImage(named: "docx_ic")
                                 aCell.lblFileName.text = self.conversationArrayList[indexPath.row].content!
                                 aCell.lblTime.text = self.utcToLocal(dateStr: self.conversationArrayList[indexPath.row].timestamp ?? "")
                                 if self.conversationArrayList[indexPath.row].caption != "" && self.conversationArrayList[indexPath.row].caption != nil{
@@ -1502,8 +1555,8 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                         self.conversationArrayList[indexPath.row].files?[0].type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document" {
                                 let aCell = self.chatTableView.dequeueReusableCell(withIdentifier: self.cellReuseIdentifierCellFIleForNonLoginUser,for: indexPath) as! ConversationCellFileNonLoginUser
                                 aCell.contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
-                                
-                                aCell.ivImageIcon.image = UIImage(named: "doc")
+                                aCell.ivImageIcon.image = UIImage(named: "doc", in: Bundle.module, compatibleWith: nil)
+                                //aCell.ivImageIcon.image = UIImage(named: "doc")
                                 aCell.lblFileName.text = self.conversationArrayList[indexPath.row].content!
                                 aCell.lblTime.text = self.utcToLocal(dateStr: self.conversationArrayList[indexPath.row].timestamp ?? "")
                                 if self.conversationArrayList[indexPath.row].caption != "" && self.conversationArrayList[indexPath.row].caption != nil{
@@ -1521,8 +1574,8 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                 
                                 let aCell = self.chatTableView.dequeueReusableCell(withIdentifier: self.cellReuseIdentifierCellFIleForNonLoginUser,for: indexPath) as! ConversationCellFileNonLoginUser
                                 aCell.contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
-                                
-                                aCell.ivImageIcon.image = UIImage(named: "xls")
+                                aCell.ivImageIcon.image = UIImage(named: "xls", in: Bundle.module, compatibleWith: nil)
+                                //aCell.ivImageIcon.image = UIImage(named: "xls")
                                 aCell.lblFileName.text = self.conversationArrayList[indexPath.row].content!
                                 aCell.lblTime.text = self.utcToLocal(dateStr: self.conversationArrayList[indexPath.row].timestamp ?? "")
                                 if self.conversationArrayList[indexPath.row].caption != "" && self.conversationArrayList[indexPath.row].caption != nil{
@@ -1539,8 +1592,8 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                             else if self.conversationArrayList[indexPath.row].files?[0].type == "xlsx" || self.conversationArrayList[indexPath.row].files?[0].type == "application/xlsx"{
                                 let aCell = self.chatTableView.dequeueReusableCell(withIdentifier: self.cellReuseIdentifierCellFIleForNonLoginUser,for: indexPath) as! ConversationCellFileNonLoginUser
                                 aCell.contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
-                                
-                                aCell.ivImageIcon.image = UIImage(named: "xlsx")
+                                aCell.ivImageIcon.image = UIImage(named: "xlsx", in: Bundle.module, compatibleWith: nil)
+                                //aCell.ivImageIcon.image = UIImage(named: "xlsx")
                                 aCell.lblFileName.text = self.conversationArrayList[indexPath.row].content!
                                 aCell.lblTime.text = self.utcToLocal(dateStr: self.conversationArrayList[indexPath.row].timestamp ?? "")
                                 if self.conversationArrayList[indexPath.row].caption != "" && self.conversationArrayList[indexPath.row].caption != nil{
@@ -1558,8 +1611,8 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                                 
                                 let aCell = self.chatTableView.dequeueReusableCell(withIdentifier: self.cellReuseIdentifierCellFIleForNonLoginUser,for: indexPath) as! ConversationCellFileNonLoginUser
                                 aCell.contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
-                                
-                                aCell.ivImageIcon.image = UIImage(named: "csv")
+                                aCell.ivImageIcon.image = UIImage(named: "csv", in: Bundle.module, compatibleWith: nil)
+                               // aCell.ivImageIcon.image = UIImage(named: "csv")
                                 aCell.lblFileName.text = self.conversationArrayList[indexPath.row].content!
                                 aCell.lblTime.text = self.utcToLocal(dateStr: self.conversationArrayList[indexPath.row].timestamp ?? "")
                                 if self.conversationArrayList[indexPath.row].caption != "" && self.conversationArrayList[indexPath.row].caption != nil{
@@ -1627,19 +1680,23 @@ public class ChatViewController: UIViewController, UITableViewDelegate, UITableV
                     if self.conversationArrayList[indexPath.row].isNotNewChat == true{
                         if self.conversationArrayList[indexPath.row].isUpdateStatus == true{
                             if self.conversationArrayList[indexPath.row].isSeen! {
-                                aCell.ivStatus.image = UIImage(named: "read_reciept")
+                                //aCell.ivStatus.image = UIImage(named: "read_reciept")
+                                aCell.ivStatus.image = UIImage(named: "read_reciept", in: Bundle.module, compatibleWith: nil)
                             }else{
-                                aCell.ivStatus.image = UIImage(named: "tick")
-                                
+                                //aCell.ivStatus.image = UIImage(named: "tick")
+                                aCell.ivStatus.image = UIImage(named: "tick", in: Bundle.module, compatibleWith: nil)
                             }
                         }else{
-                            aCell.ivStatus.image = UIImage(named: "send_messagetime")
+                           // aCell.ivStatus.image = UIImage(named: "send_messagetime")
+                            aCell.ivStatus.image = UIImage(named: "send_messagetime", in: Bundle.module, compatibleWith: nil)
                         }
                     }else{
                         if self.conversationArrayList[indexPath.row].isSeen! {
-                            aCell.ivStatus.image = UIImage(named: "read_reciept")
+                            //aCell.ivStatus.image = UIImage(named: "read_reciept")
+                            aCell.ivStatus.image = UIImage(named: "read_reciept", in: Bundle.module, compatibleWith: nil)
                         }else{
-                            aCell.ivStatus.image = UIImage(named: "tick")
+                            //aCell.ivStatus.image = UIImage(named: "tick")
+                            aCell.ivStatus.image = UIImage(named: "tick", in: Bundle.module, compatibleWith: nil)
                         }
                         
                     }
